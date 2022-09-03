@@ -12,6 +12,9 @@ async function main() {
   const testValue = ethers.utils.parseEther("0.0001").toString();
 
   const { deployer } = await getNamedAccounts();
+  const deployerShort: string = deployer
+    .slice(0, 6)
+    .concat("...", deployer.slice(deployer.length - 4));
   const deploySigner: SignerWithAddress = await ethers.getSigner(deployer);
   const lendingPool: IPool = await getLendingPool(deploySigner);
   //await approveErc20(wethToken, lendingPool.address, testValue, deploySigner);
@@ -25,10 +28,10 @@ async function main() {
     const totalCollateralDollar = totalCollateralBase.toNumber() / 100000000;
     const totalDebtDollar = totalDebtBase.toNumber() / 100000000;
     const availableBorrowsDollar = availableBorrowsBase.toNumber() / 100000000;
-    console.log("userData after execution:");
-    console.log(`has ${totalCollateralDollar}$ collateral deposited`);
-    console.log(`has ${totalDebtDollar}$ debt`);
-    console.log(`has ${availableBorrowsDollar}$ available to borrow`);
+    console.log(`user ${deployerShort} has`);
+    console.log(`${totalCollateralDollar}$ collateral deposited,`);
+    console.log(`${totalDebtDollar}$ debt and`);
+    console.log(`${availableBorrowsDollar}$ available to borrow.`);
   }
 
   async function approveErc20(
