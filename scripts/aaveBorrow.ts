@@ -19,7 +19,9 @@ async function main() {
   const lendingPool: IPool = await getLendingPool(deploySigner);
   //await approveErc20(wethToken, lendingPool.address, testValue, deploySigner);
   //await lendingPool.deposit(wethToken, testValue, deployer, 0);
-  await userDataBorrow(lendingPool);
+  let { availableBorrowsBase, totalDebtBase } = await userDataBorrow(
+    lendingPool
+  );
 
   // helper functions from here on.
   async function userDataBorrow(pool: IPool) {
@@ -32,6 +34,7 @@ async function main() {
     console.log(`${totalCollateralDollar}$ collateral deposited,`);
     console.log(`${totalDebtDollar}$ debt and`);
     console.log(`${availableBorrowsDollar}$ available to borrow.`);
+    return { availableBorrowsBase, totalDebtBase };
   }
 
   async function approveErc20(
