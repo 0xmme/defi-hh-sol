@@ -19,23 +19,23 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/mme022/erc20-hh-sol">
+  <a href="https://github.com/mme022/defi-hh-sol">
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-<h3 align="center">Hardhat Solidity ERC-20 Token</h3>
+<h3 align="center">Hardhat Solidity Aave Integration</h3>
 
   <p align="center">
-    This is a sample project made with Hardhat and Solidity, consisting of the ERC-20 Token contract, deployments and tests.
+    This is a sample project made with Hardhat, Solidity and TypeScript for of the integration of Aave V3 tested on Goerli Testnet. 
     <br />
-    <!--<a href="https://github.com/mme022/erc20-hh-sol"><strong>Explore the docs »</strong></a>
+    <!--<a href="https://github.com/mme022/defi-hh-sol"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/mme022/erc20-hh-sol">View Demo</a>-->
+    <a href="https://github.com/mme022/defi-hh-sol">View Demo</a>-->
     <!--·-->
-    <a href="hhttps://github.com/mme022/erc20-hh-sol/issues">Report Bug</a>
+    <a href="hhttps://github.com/mme022/defi-hh-sol/issues">Report Bug</a>
     ·
-    <a href="https://github.com/mme022/erc20-hh-sol/issues">Request Feature</a>
+    <a href="https://github.com/mme022/defi-hh-sol/issues">Request Feature</a>
   </p>
 </div>
 
@@ -69,10 +69,7 @@
 
 <!--[![Product Name Screen Shot][product-screenshot]](https://example.com)-->
 
-This is a project ERC-20 Standard Token on solidity for the ethereum blockchain. I made it with Hardhat and therefore this project consists of the contracts, the deployment scripts and the mocha/chai tests.
-So far I made a unit test with Typescript and used OpenZeppelin.
-A deployed sample of the contract can be found on Goerli:
-[0xFb62e247CCf8C64b6B751C6cd4ab18407dAeaa05](https://goerli.etherscan.io/address/0xfb62e247ccf8c64b6b751c6cd4ab18407daeaa05)
+tbd
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -81,7 +78,7 @@ A deployed sample of the contract can be found on Goerli:
 - [Hardhat](https://hardhat.org/)
 - [TypeScript](https://typescriptlang.org/)
 - [Ethers](https://docs.ethers.io/v5/)
-- [OpenZeppelin](https://www.openzeppelin.com/)
+- [Aave](https://docs.aave.com/hub/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -101,7 +98,7 @@ This is an example of how to list things you need to use the software and how to
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/mme022/erc20-hh-sol.git
+   git clone https://github.com/mme022/defi-hh-sol.git
    ```
 2. Install NPM packages
 
@@ -160,7 +157,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 Manuel Meinert - [@mme022](https://twitter.com/mme022) - meinert@protonmail.com
 
-Project Link: [https://github.com/mme022/erc20-hh-sol](https://github.com/mme022/erc20-hh-sol)
+Project Link: [https://github.com/mme022/defi-hh-sol](https://github.com/mme022/defi-hh-sol)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -169,16 +166,16 @@ Project Link: [https://github.com/mme022/erc20-hh-sol](https://github.com/mme022
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
-[contributors-shield]: https://img.shields.io/github/contributors/mme022/erc20-hh-sol.svg?style=for-the-badge
-[contributors-url]: https://github.com/mme022/erc20-hh-sol/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/mme022/erc20-hh-sol.svg?style=for-the-badge
-[forks-url]: https://github.com/mme022/erc20-hh-sol/network/members
-[stars-shield]: https://img.shields.io/github/stars/mme022/erc20-hh-sol.svg?style=for-the-badge
-[stars-url]: https://github.com/mme022/erc20-hh-sol/stargazers
-[issues-shield]: https://img.shields.io/github/issues/mme022/erc20-hh-sol.svg?style=for-the-badge
-[issues-url]: https://github.com/mme022/erc20-hh-sol/issues
-[license-shield]: https://img.shields.io/github/license/mme022/erc20-hh-sol.svg?style=for-the-badge
-[license-url]: https://github.com/mme022/erc20-hh-sol/blob/master/LICENSE.txt
+[contributors-shield]: https://img.shields.io/github/contributors/mme022/defi-hh-sol.svg?style=for-the-badge
+[contributors-url]: https://github.com/mme022/defi-hh-sol/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/mme022/defi-hh-sol.svg?style=for-the-badge
+[forks-url]: https://github.com/mme022/defi-hh-sol/network/members
+[stars-shield]: https://img.shields.io/github/stars/mme022/defi-hh-sol.svg?style=for-the-badge
+[stars-url]: https://github.com/mme022/defi-hh-sol/stargazers
+[issues-shield]: https://img.shields.io/github/issues/mme022/defi-hh-sol.svg?style=for-the-badge
+[issues-url]: https://github.com/mme022/defi-hh-sol/issues
+[license-shield]: https://img.shields.io/github/license/mme022/defi-hh-sol.svg?style=for-the-badge
+[license-url]: https://github.com/mme022/defi-hh-sol/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/manuel-meinert
 [product-screenshot]: images/screenshot.png

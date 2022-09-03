@@ -3,7 +3,6 @@ import "@nomicfoundation/hardhat-toolbox";
 import * as dotenv from "dotenv";
 import "dotenv/config";
 import "hardhat-deploy";
-import "@primitivefi/hardhat-dodoc";
 
 dotenv.config();
 
@@ -13,6 +12,8 @@ const config: HardhatUserConfig = {
       {
         version: "0.8.16",
       },
+      { version: "0.4.19" },
+      { version: "0.8.10" },
     ],
   },
   defaultNetwork: "goerli",
@@ -32,10 +33,16 @@ const config: HardhatUserConfig = {
       accounts:
         process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
       chainId: 5,
+      forking: {
+        url: process.env.GOERLI_URL!,
+      },
     },
-    // hardhat: {
-    //  chainId: 31337,
-    // },
+    hardhat: {
+      chainId: 31337,
+      forking: {
+        url: process.env.ALCHEMY_URL!,
+      },
+    },
   },
   gasReporter: {
     enabled: process.env.REPORT_GAS !== undefined,
@@ -59,9 +66,6 @@ const config: HardhatUserConfig = {
       default: 1,
       1: 1,
     },
-  },
-  dodoc: {
-    runOnCompile: true,
   },
 };
 
