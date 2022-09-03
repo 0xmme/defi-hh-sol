@@ -33,9 +33,9 @@ const config: HardhatUserConfig = {
       accounts:
         process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
       chainId: 5,
-      forking: {
-        url: process.env.GOERLI_URL!,
-      },
+      //forking: {
+      //  url: process.env.GOERLI_URL!,
+      //},
     },
     hardhat: {
       chainId: 31337,
