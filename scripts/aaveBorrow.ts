@@ -7,16 +7,29 @@ import { IPool } from "../typechain-types/IPool";
 import { IPoolAddressesProvider } from "../typechain-types/IPoolAddressesProvider";
 
 async function main() {
-  await getWeth();
+  //await getWeth();
   const wethToken: Address = networkConfig[network.name].wethToken!;
   const testValue = ethers.utils.parseEther("0.0001").toString();
 
   const { deployer } = await getNamedAccounts();
   const deploySigner: SignerWithAddress = await ethers.getSigner(deployer);
   const lendingPool: IPool = await getLendingPool(deploySigner);
-  await approveErc20(wethToken, lendingPool.address, testValue, deploySigner);
-  await lendingPool.deposit(wethToken, testValue, deployer, 0);
-  console.log(`${testValue} deposited!`);
+  //await approveErc20(wethToken, lendingPool.address, testValue, deploySigner);
+  //await lendingPool.deposit(wethToken, testValue, deployer, 0);
+  await userDataBorrow(lendingPool);
+
+  // helper functions from here on.
+  async function userDataBorrow(pool: IPool) {
+    const { totalCollateralBase, totalDebtBase, availableBorrowsBase } =
+      await pool.getUserAccountData(deployer);
+    const totalCollateralDollar = totalCollateralBase.toNumber() / 100000000;
+    const totalDebtDollar = totalDebtBase.toNumber() / 100000000;
+    const availableBorrowsDollar = availableBorrowsBase.toNumber() / 100000000;
+    console.log("userData after execution:");
+    console.log(`has ${totalCollateralDollar}$ collateral deposited`);
+    console.log(`has ${totalDebtDollar}$ debt`);
+    console.log(`has ${availableBorrowsDollar}$ available to borrow`);
+  }
 
   async function approveErc20(
     approveErc: Address,
@@ -34,7 +47,6 @@ async function main() {
       approveAmount
     );
     await approvalTx.wait(1);
-    console.log(`${approveAmount} approved!`);
   }
 
   async function getLendingPool(Signer: SignerWithAddress): Promise<IPool> {

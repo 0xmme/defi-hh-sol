@@ -20,5 +20,5 @@ export async function getWeth() {
   //await txWithdraw.wait(1);
 
   const balanceWeth = (await iWeth.balanceOf(deployer)).toString();
-  console.log(`Got ${balanceWeth} WETH!`);
+  console.log(`Got ${depositValue} WETH, now up to ${balanceWeth} WETH!`);
 }
